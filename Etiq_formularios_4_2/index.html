@@ -1,0 +1,53 @@
+<form>
+    <fieldset>
+        <legend>Datos personales</legend>
+        <label for="nombre">Nombre y apellidos: </label>
+        <input id="nombre" type="text" minlength="3" maxlength="5"><br>
+
+        <label for="sexo">Sexo: </label>
+        <select id="sexo">
+            <!--Etiqueta option-->
+            <option value="value1">Hombre</option>
+            <option value="value2" selected>Mujer</option>
+        </select><br><br>
+
+        <label>Edad: </label>
+        <input type="checkbox" value="20-39"> 20-39
+        <input type="checkbox" value="40-59"> 40-59
+        <input type="checkbox" value="60-79"> 60-79<br><br>
+
+        <label for="email">Email: </label>
+        <input id="email" type="email"><br><br>
+
+        <label for="estudios">Estudios: </label>
+        <select id="estudios">
+            <optgroup label="Estudios Universitarios">
+                <option>Doctorado</option>
+                <option>Máster</option>
+                <option>Grado</option>
+            </optgroup>
+            <optgroup label="Ciclo Formativo">
+                <option>Grado Superior</option>
+                <option>Grado Medio</option>
+            </optgroup>
+        </select><br><br>
+    </fieldset>
+    <fieldset>
+        <legend>Preferencias</legend>
+
+        <label for="navegador">Elige tu navegador favorito: </label>
+        <input id="navegador" list="browsers">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Internet Explorer">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Microsoft Edge">
+        </datalist><br><br>
+
+        <label for="mensaje">Escribe tu mensaje: </label>
+        <textarea rows="10" cols="50" placeholder="Mensaje" id="mensaje"></textarea>
+    </fieldset>
+    <input type="submit" value="Enviar">
+</form>
