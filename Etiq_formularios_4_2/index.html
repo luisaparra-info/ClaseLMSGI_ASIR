@@ -2,13 +2,16 @@
     <fieldset>
         <legend>Datos personales</legend>
         <label for="nombre">Nombre y apellidos: </label>
-        <input id="nombre" type="text" minlength="3" maxlength="5"><br>
+        <input id="nombre" name="nombre" type="text" required minlength="3" maxlength="5" placeholder="Introduzca su nombre"><br>
 
         <label for="sexo">Sexo: </label>
-        <select id="sexo">
+        <select id="sexo" required>
             <!--Etiqueta option-->
-            <option value="value1">Hombre</option>
-            <option value="value2" selected>Mujer</option>
+            <option disabled selected hidden value="">Selecciona una opción</option>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+            <option value="O">Otro</option>
+        
         </select><br><br>
 
         <label>Edad: </label>
@@ -16,6 +19,22 @@
         <input type="checkbox" value="40-59"> 40-59
         <input type="checkbox" value="60-79"> 60-79<br><br>
 
+        <label>Edad: </label>
+        <input type="radio" id="rango1" name="edad_radio" value="20-39" />
+        <label for="rango1">20-39</label>
+  
+        <input type="radio" id="rango2" name="edad_radio" value="40-59" />
+        <label for="rango2">40-59</label>
+  
+        <input type="radio" id="rango3" name="edad_radio" value="60-79" />
+        <label for="rango3">60-79</label>
+
+        <br><br>
+
+        <label for="cumple">Fecha nacimiento: </label>
+        <input type="date" id="cumple" name="cumple" />
+
+        <br><br>
         <label for="email">Email: </label>
         <input id="email" type="email"><br><br>
 
