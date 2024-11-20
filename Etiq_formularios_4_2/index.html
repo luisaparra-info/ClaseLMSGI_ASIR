@@ -2,7 +2,8 @@
     <fieldset>
         <legend>Datos personales</legend>
         <label for="nombre">Nombre y apellidos: </label>
-        <input id="nombre" name="nombre" type="text" required minlength="3" maxlength="5" placeholder="Introduzca su nombre"><br>
+        <input id="nombre" name="nombre" type="text" required minlength="3" maxlength="5"
+            placeholder="Introduzca su nombre"><br>
 
         <label for="sexo">Sexo: </label>
         <select id="sexo" required>
@@ -11,7 +12,7 @@
             <option value="H">Hombre</option>
             <option value="M">Mujer</option>
             <option value="O">Otro</option>
-        
+
         </select><br><br>
 
         <label>Edad: </label>
@@ -22,10 +23,10 @@
         <label>Edad: </label>
         <input type="radio" id="rango1" name="edad_radio" value="20-39" />
         <label for="rango1">20-39</label>
-  
+
         <input type="radio" id="rango2" name="edad_radio" value="40-59" />
         <label for="rango2">40-59</label>
-  
+
         <input type="radio" id="rango3" name="edad_radio" value="60-79" />
         <label for="rango3">60-79</label>
 
@@ -36,8 +37,41 @@
 
         <br><br>
         <label for="email">Email: </label>
-        <input id="email" type="email"><br><br>
+        <input id="email" name="email" type="email" required placeholder="correo@ejemplo.com"
+            pattern=".+@g\.educaand\.es" title="Introduce tu correo de @g.educaand.es">
 
+        <br><br>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" 
+            id="telefono" 
+            name="telefono"
+            required 
+            placeholder="+34 123456789" 
+            pattern="\+[0-9]{2}\s\d{9}"
+            title="Introduce con formato +34 123456789 " required>
+        <br><br>
+        <label for="direccion">Dirección</label>
+        <textarea id="direccion" name="direccion" maxlength="300" ></textarea>
+        <br><br>
+        <label for="password">Contraseña (8 characters minimum):</label>
+        <input type="password" 
+            id="password" 
+            name="password"
+            placeholder="Introduce la contraseña" 
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,16}$"
+            title="" />
+            <br><br>
+        <label for="password_r">Repite Contraseña (8 characters minimum):</label>
+        <input type="password" 
+            id="password_r" 
+            name="password_r"
+            placeholder="Repite la contraseña" 
+            required />
+         
+        
+            <br><br>
         <label for="estudios">Estudios: </label>
         <select id="estudios">
             <optgroup label="Estudios Universitarios">
@@ -68,5 +102,5 @@
         <label for="mensaje">Escribe tu mensaje: </label>
         <textarea rows="10" cols="50" placeholder="Mensaje" id="mensaje"></textarea>
     </fieldset>
-    <input type="submit" value="Enviar">
+    <button type="submit" value="Enviar">Enviar</button>
 </form>
