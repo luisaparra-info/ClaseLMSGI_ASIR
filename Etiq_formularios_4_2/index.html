@@ -1,0 +1,106 @@
+<form>
+    <fieldset>
+        <legend>Datos personales</legend>
+        <label for="nombre">Nombre y apellidos: </label>
+        <input id="nombre" name="nombre" type="text" required minlength="3" maxlength="5"
+            placeholder="Introduzca su nombre"><br>
+
+        <label for="sexo">Sexo: </label>
+        <select id="sexo" required>
+            <!--Etiqueta option-->
+            <option disabled selected hidden value="">Selecciona una opción</option>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+            <option value="O">Otro</option>
+
+        </select><br><br>
+
+        <label>Edad: </label>
+        <input type="checkbox" value="20-39"> 20-39
+        <input type="checkbox" value="40-59"> 40-59
+        <input type="checkbox" value="60-79"> 60-79<br><br>
+
+        <label>Edad: </label>
+        <input type="radio" id="rango1" name="edad_radio" value="20-39" />
+        <label for="rango1">20-39</label>
+
+        <input type="radio" id="rango2" name="edad_radio" value="40-59" />
+        <label for="rango2">40-59</label>
+
+        <input type="radio" id="rango3" name="edad_radio" value="60-79" />
+        <label for="rango3">60-79</label>
+
+        <br><br>
+
+        <label for="cumple">Fecha nacimiento: </label>
+        <input type="date" id="cumple" name="cumple" />
+
+        <br><br>
+        <label for="email">Email: </label>
+        <input id="email" name="email" type="email" required placeholder="correo@ejemplo.com"
+            pattern=".+@g\.educaand\.es" title="Introduce tu correo de @g.educaand.es">
+
+        <br><br>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" 
+            id="telefono" 
+            name="telefono"
+            required 
+            placeholder="+34 123456789" 
+            pattern="\+[0-9]{2}\s\d{9}"
+            title="Introduce con formato +34 123456789 " required>
+        <br><br>
+        <label for="direccion">Dirección</label>
+        <textarea id="direccion" name="direccion" maxlength="300" ></textarea>
+        <br><br>
+        <label for="password">Contraseña (8 characters minimum):</label>
+        <input type="password" 
+            id="password" 
+            name="password"
+            placeholder="Introduce la contraseña" 
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,16}$"
+            title="" />
+            <br><br>
+        <label for="password_r">Repite Contraseña (8 characters minimum):</label>
+        <input type="password" 
+            id="password_r" 
+            name="password_r"
+            placeholder="Repite la contraseña" 
+            required />
+         
+        
+            <br><br>
+        <label for="estudios">Estudios: </label>
+        <select id="estudios">
+            <optgroup label="Estudios Universitarios">
+                <option>Doctorado</option>
+                <option>Máster</option>
+                <option>Grado</option>
+            </optgroup>
+            <optgroup label="Ciclo Formativo">
+                <option>Grado Superior</option>
+                <option>Grado Medio</option>
+            </optgroup>
+        </select><br><br>
+    </fieldset>
+    <fieldset>
+        <legend>Preferencias</legend>
+
+        <label for="navegador">Elige tu navegador favorito: </label>
+        <input id="navegador" list="browsers">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Internet Explorer">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Microsoft Edge">
+        </datalist><br><br>
+
+        <label for="mensaje">Escribe tu mensaje: </label>
+        <textarea rows="10" cols="50" placeholder="Mensaje" id="mensaje"></textarea>
+    </fieldset>
+    <button type="submit" value="Enviar">Enviar</button>
+</form>
