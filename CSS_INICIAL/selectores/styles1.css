@@ -1,0 +1,102 @@
+/* Estilos generales para la página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Encabezado estilizado con vh para la altura */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    height: 15vh; /* 15% de la altura del viewport */
+    line-height: 15vh; /* Centrado vertical del texto */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Sección principal estilizada con vh y vw */
+main {
+    height: 70vh; /* 70% de la altura del viewport */
+    background-color: #ffffff;
+    padding: 5vw; /* 5% del ancho del viewport */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    text-align: center;
+}
+
+/* Artículos dentro de la sección principal */
+article {
+    background-color: #e0e0e0;
+    width: 50vw; /* 50% del ancho del viewport */
+    padding: 2vh; /* 2% de la altura del viewport */
+    margin: 2vh auto; /* Margen vertical usando vh y centrado horizontal */
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1vh;
+}
+
+article:hover {
+    background-color: #d6d6d6;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Selectores anidados para énfasis */
+article > h2 {
+    font-size: 2vh;
+    color: #333;
+    margin: 0;
+}
+
+article > p {
+    font-size: 1.8vh;
+    color: #666;
+}
+
+/* Pie de página estilizado con vh y vw */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    height: 10vh; /* 10% de la altura del viewport */
+    line-height: 10vh; /* Centrado vertical del texto */
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 1vw;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Diseño responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    main {
+        padding: 10vw;
+    }
+
+    article {
+        width: 80vw; /* Ajuste al 80% del ancho del viewport */
+    }
+
+    article > h2 {
+        font-size: 2.5vh;
+    }
+
+    article > p {
+        font-size: 2vh;
+    }
+}
