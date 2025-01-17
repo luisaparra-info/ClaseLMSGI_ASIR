@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el cuerpo y el html ocupen todo el alto del viewport */
+  }
+  
+  .contenedor {
+    position: relative; /* Establece una posición relativa */
+    height: 50vh; /* Utiliza el 100% del alto del viewport */
+    width: 50vh;
+    border: solid 2px red;
+    margin-left: 25vw;
+    margin-top: 25vh;
+
+  }
+  
+  .centrado {
+    position: absolute; /* Establece una posición absoluta */
+    top: 50px; /* Sitúa el elemento en el 50% de la altura del contenedor */
+    left: 50px; /* Sitúa el elemento en el 50% del ancho del contenedor */
+    text-align: center; /* Alineación del texto */
+    border: solid 2px blue;
+
+  }
+  
+  .fa-bici {
+    color: tomato; /* Color del icono (cambia según tus preferencias) */
+  }

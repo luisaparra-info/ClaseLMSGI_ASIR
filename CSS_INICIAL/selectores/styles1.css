@@ -11,15 +11,39 @@ header {
     color: white;
     text-align: center;
     height: 15vh; /* 15% de la altura del viewport */
-    line-height: 15vh; /* Centrado vertical del texto */
+    /*line-height: 15vh;  Centrado vertical del texto */
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+header ul {
+    width: 80%;
+    list-style: none;
+    margin: 0 auto;
+
+
+    li{
+        display: inline-block;
+    }
+
+}
+
+header li a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #d6d6d6;
+    font-weight: 700;
+}
+
+header li a:hover{
+    color: #636b66;
+}
+
+
 /* Sección principal estilizada con vh y vw */
 main {
-    height: 70vh; /* 70% de la altura del viewport */
+    /*height: 70vh;  70% de la altura del viewport */
     background-color: #ffffff;
     padding: 5vw; /* 5% del ancho del viewport */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
