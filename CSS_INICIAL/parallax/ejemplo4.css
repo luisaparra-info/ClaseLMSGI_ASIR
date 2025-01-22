@@ -1,0 +1,89 @@
+/* Reinicio básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 10vh 5vw;
+    background: #222;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Secciones Parallax */
+.parallax {
+    position: relative;
+    height: 70vh; /* Altura de la sección en relación al viewport */
+    background-attachment: fixed; /* Fondo fijo para el efecto parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.parallax h2 {
+    font-size: 2.5vw;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 1em 2em; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Fondos específicos para las secciones parallax */
+.parallax-1 {
+    background-image: url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
+}
+
+.parallax-2 {
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
+}
+
+.parallax-3 {
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
+}
+
+/* Secciones de Contenido */
+.content {
+    padding: 5vh 10vw;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.content h2 {
+    margin-bottom: 2vh;
+    font-size: 2.5vw;
+    color: #222;
+}
+
+.content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Pie de página */
+.footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2vh 5vw;
+}
