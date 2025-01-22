@@ -1,0 +1,15 @@
+- ¿Qué es CSS?: Agrega una breve explicación sobre CSS en la parte superior de la página, utilizando una etiqueta <p>.
+- Aplicar Estilos CSS: Aplica estilos a la página en un archivo CSS separado.
+- Selectores: Utiliza selectores por tipo, clase e id, como se ve en la plantilla.
+- Unidades de Medida: Usa vh y vw para aplicar tamaños de pantalla.
+- Colores y Fondo: Aplica color de fondo y texto en las secciones correspondientes.
+- Efecto Parallax: Implementa el efecto parallax en la sección .parallax.
+- Propiedades de Texto y Fuentes: Personaliza las fuentes y propiedades de texto.
+- Propiedades de las Listas: Da formato a una lista en la sección correspondiente.
+- Modelo de Cajas: Aplica márgenes, relleno y bordes.
+- Tamaño de Elementos: Usa propiedades como width y height.
+- Propiedades de las Tablas: Crea una tabla con estilos de borde y relleno.
+- Posicionamiento: Utiliza las propiedades position y display para los elementos del header y footer.
+
+Entrega
+- Entrega los archivos index.html y styles.css con los cambios que hayas realizado.
