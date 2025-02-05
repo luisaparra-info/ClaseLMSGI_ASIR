@@ -46,7 +46,9 @@ header{
   transition: 0.5s ease-in-out;
   -webkit-transition: 0.5s ease-in-out;
 }
-
+.menu:hover > span {
+  height: 100%; 
+}
 .menu:after, .menu > span > span {
   display: block;
   text-align: center;
@@ -82,9 +84,7 @@ header{
     background: #9600b4;
 }
 
-.menu:hover > span {
-    height: 100%; 
-}
+
 
 ul {
   list-style-type: none;
