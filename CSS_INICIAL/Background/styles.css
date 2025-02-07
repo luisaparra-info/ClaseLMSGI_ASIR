@@ -1,0 +1,14 @@
+/*body { background-image: url("https://bit.ly/2slA7jo");}
+
+body { background-image: url("https://bit.ly/2slA7jo"); background-repeat: repeat-x;}
+
+body { background-image: url("https://bit.ly/2slA7jo"); background-repeat: repeat-y;}
+
+body { background-image: url("https://bit.ly/2slA7jo"); background-repeat: no-repeat;}
+
+body { background-image: url("https://bit.ly/2slA7jo"); background-repeat: repeat;}
+*/
+body { background-image: url("https://bit.ly/2slA7jo"); 
+    background-size: 100px 100px; 
+    background-repeat: repeat-y  ;
+}

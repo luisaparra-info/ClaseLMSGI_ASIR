@@ -1,0 +1,60 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Efecto Parallax */
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+        background-image: url('https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    }
+
+/* Feature Section */
+.feature {
+    background-image: url('https://images.pexels.com/photos/2101862/pexels-photo-2101862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+/* Footer Section */
+.footer {
+    background-image: url('https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+
+
+/* Overlay para Texto */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Content Section */
+.content {
+    padding: 40px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}

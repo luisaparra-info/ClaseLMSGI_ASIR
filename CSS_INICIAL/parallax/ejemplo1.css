@@ -1,0 +1,17 @@
+body, html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.parallax {
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-acuarela-lamina-dorada_52683-46208.jpg?w=1380&t=st=1718787098~exp=1718787698~hmac=9bb13d994e033cbf040996bb966682add623588b6e3f47fc9cd1511ef616bc3a');
+    height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content {
+    height: 500px;
+    text-align: center;
+    padding: 50px;
+}

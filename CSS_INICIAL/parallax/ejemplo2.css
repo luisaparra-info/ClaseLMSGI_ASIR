@@ -1,0 +1,27 @@
+*{font-family: Arial;}
+.cta-container {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-monocromatico-blanco-estilo-papel_52683-66443.jpg?w=900&t=st=1697252118~exp=1697252718~hmac=c828b4d3b79a4f8c77d76ef1d503fd6b1666bcb1e7b4434ad3dbaffaaadc84ff"); /* Imagen de fondo */
+  background-size: cover; /* Cubre completamente el contenedor */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No se repite la imagen de fondo */
+  background-attachment: fixed; /* Fondo fijo en la ventana */
+  opacity: 0.9; /* Opacidad del contenedor */
+  text-align: center; /* Alineación del contenido al centro */
+  padding: 70px;
+}
+
+.cta-text {
+  font-size: 24px;
+}
+
+.cta-button {
+  background-color: #FF5733; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón en blanco */
+  padding: 10px 20px; /* Relleno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 18px;
+}
+.cta-button:hover {
+  background-color: #fc2a00;
+}

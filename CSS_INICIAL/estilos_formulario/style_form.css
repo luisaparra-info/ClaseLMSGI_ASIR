@@ -1,0 +1,22 @@
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .icon-input {
+    padding: 10px 15px 10px 45px; 
+    border: 2px solid #2196F3; 
+    border-radius: 25px; 
+    width: 300px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7; 
+    outline: none; 
+  }
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 20px;
+  }
