@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <title>JavaScript</title>
+   <script src="script.js"></script>
+</head>
+<body>
+   <!-- Evento onclick -->
+ <p onclick="alert('¡Has hecho clic!')">
+    Haz clic aquí para ver un mensaje cuando hagas clic con el botón izquierdo del ratón.
+ </p>
+ <!-- Evento ondblclick -->
+ <p ondblclick="alert('¡Doble clic!')">
+    Haz doble clic aquí para ver un mensaje.
+ </p>
+ <!-- 
+ Usando un elemento de imagen para el evento onload 
+<img src="imagen.jpg" onload="alert('La imagen se ha cargado correctamente')" onerror="alert('Error al cargar la imagen')">
+-->
+<h1>Clic aquí</h1>
+<h2>Prueba js externo</h2>
+<script>
+  // Este es el código JavaScript integrado
+  // El siguiente código muestra una alerta cuando se hace clic en el párrafo
+  let parrafo = document.querySelector("h1");
+  parrafo.addEventListener("click", function() {
+    alert("¡Hola Mundo!");
+  });
+</script>
+
+</body>
+</html>
