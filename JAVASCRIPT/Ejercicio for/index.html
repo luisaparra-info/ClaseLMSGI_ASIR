@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header><h1>Medias de Temperatura</h1></header>
+    <main>
+        <section class="avg">
+            <select id="localidad">
+                <!--Etiqueta option-->
+                <option disabled selected hidden value="">Selecciona una localidad</option>
+                <option value="Vera">Vera</option>
+                <option value="HO">HO</option>
+                <option value="Albox">Albox</option>
+                <option value="Mojacar">Mojacar</option>
+            </select>
+            <button id="avglocalidad" value="avglocalidad">Calcular media Tª max en esa localidad</button>
+            <span id="res_avglocalidad"></span>
+        </section>
+        <section class="avg">
+            <select id="dia">
+                <!--Etiqueta option-->
+                <option disabled selected hidden value="">Selecciona un día </option>
+                <option value="L">Lunes</option>
+                <option value="M">Martes</option>
+                <option value="X">Miércoles</option>
+                <option value="J">Jueves</option>
+                <option value="V">Viernes</option>
+                <option value="S">Sábado</option>
+                <option value="D">Domingo</option>
+            </select>
+            <button id="avgdia" value="avgdia">Calcular media Tª max en ese día</button>
+            <span id="res_avgdia"></span>
+        </section>
+        <section class="avg">
+            <button id="avg" value="avg">Calcular media Tª max</button>
+            <span id="res_avg"></span>
+        </section>
+    </main>
+</body>
+</html>

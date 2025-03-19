@@ -1,0 +1,17 @@
+.container {
+  background: var(--color, grey);
+  min-height: 200px;
+  padding: 1rem 2rem;
+}
+
+@media (width <= 550px) {
+  .container {
+    --color: indigo;
+  }
+}
+
+@media (width >= 750px) {
+  .container {
+    --color: green;
+  }
+}
