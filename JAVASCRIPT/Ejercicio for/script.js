@@ -12,6 +12,9 @@ for(let i=0; i<localidades.length;i++){
     data.innerHTML = data.innerHTML + `<option value="${localidades[i]}">${localidades[i]}</option>`
 }
 
-
-alert(data.innerHTML);
+function avglocalidad(){
+  
+   const valor = document.getElementById("localidad").value;
+   document.getElementById("res_avglocalidad").innerHTML=valor;
+}
 
