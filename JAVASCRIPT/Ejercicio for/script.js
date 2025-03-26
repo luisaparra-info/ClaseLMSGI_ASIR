@@ -21,11 +21,11 @@ localidades.forEach((localidad, index) => {
 });
 */
 
-function getIndexOfLocalidad(nombre){
- if (nombre==="")return -1;
-return localidades.indexOf(nombre);
-}
-
+/**
+ * 
+ * @param {*} arrayT 
+ * @returns 
+ */
 function calcularMedia(arrayT) {
     let suma = 0;
     arrayT.forEach(num => {
@@ -33,12 +33,36 @@ function calcularMedia(arrayT) {
     });
     return arrayT.length ? (suma / arrayT.length).toFixed(2) : "0.00";
 }
+function calcularMediaDia(dia) {
+    let suma = 0;
+    temperaturas.forEach(localidad => {
+        suma += localidad[dia];
+    });
+    return temperaturas.length ? (suma / temperaturas.length).toFixed(2) : "0.00";
+}
 
+/**
+ * Esta función no la vamos a usar, vamos a reutilizar código.
+ * @returns 
+ */
+function calcularMediaGlobal() {
+    let suma = 0;
+    temperaturas.forEach(localidad => {
+        localidad.forEach(num => {
+            suma += num;
+        }
+
+        );
+    });
+    return temperaturas.length ? (suma / temperaturas.length).toFixed(2) : "0.00";
+}
 
 function avglocalidad(){
   
-   const nombre = document.getElementById("localidad").value;
-   const indice= getIndexOfLocalidad(nombre);
+   //const nombre = document.getElementById("localidad").value;
+   //const indice= getIndexOfLocalidad(nombre);
+    const indice = document.getElementById("localidad").selectedIndex-1;
+
    if (indice>=0){
     document.getElementById("res_avglocalidad").innerHTML=calcularMedia(temperaturas[indice]);
    }else{
@@ -51,16 +75,14 @@ document.getElementById("avgdia").addEventListener("click", function() {
     const diaIndex = document.getElementById("dia").selectedIndex - 1;
     if (diaIndex < 0) return;
     
-    const avgTemp = temperaturas.reduce((sum, tempArray) => sum + tempArray[diaIndex], 0) / temperaturas.length;
+    const avgTemp = calcularMediaDia(diaIndex);
     
-    document.getElementById("res_avgdia").textContent = `Media: ${avgTemp.toFixed(2)}°C`;
+    document.getElementById("res_avgdia").textContent = `Media: ${avgTemp}°C`;
 });
 
 document.getElementById("avg").addEventListener("click", function() {
     const allTemps = temperaturas.flat();
-    const avgTemp = allTemps.reduce((sum, temp) => sum + temp, 0) / allTemps.length;
-    
-    document.getElementById("res_avg").textContent = `Media global: ${avgTemp.toFixed(2)}°C`;
+    document.getElementById("res_avg").textContent = `Media global: ${calcularMedia(allTemps)}°C`;
 });
 
 
