@@ -1,16 +1,30 @@
-const temperaturas = [
+
+/*const temperaturas = [
     [23,25,22,16,24,22,27],
     [33,35,32,36,34,32,37],
     [13,15,12,26,14,12,17],
     [25,25,25,25,25,25,25]]; 
 
 const localidades = ["Vera","Huércal-Overa","Albox","Mojácar"];
-
-const data = document.getElementById("localidad");
-
-for(let i=0; i<localidades.length;i++){
-    data.innerHTML = data.innerHTML + `<option value="${localidades[i]}">${localidades[i]}</option>`
+*/
+function setSelectLocalidades(localidades){
+    const data = document.getElementById("localidad");
+    for(let i=0; i<localidades.length;i++){
+        data.innerHTML = data.innerHTML + `<option value="${localidades[i]["nombre"]}">${localidades[i]["nombre"]}</option>`
+    }
 }
+
+fetch("datos.json")
+  .then(response => response.json())
+  .then(datos => {console.log(datos);
+    setSelectLocalidades(datos.localidades);
+    })
+  .catch(error => console.error("El fichero no existe"))
+  .finally(() => console.log("Terminado."))
+  .catch(error => console.error(datos));
+
+  
+
 
 /* Otra manera de rellenar el select de localidades 
 localidades.forEach((localidad, index) => {
@@ -26,6 +40,8 @@ localidades.forEach((localidad, index) => {
  * @param {*} arrayT 
  * @returns 
  */
+
+
 function calcularMedia(arrayT) {
     let suma = 0;
     arrayT.forEach(num => {
