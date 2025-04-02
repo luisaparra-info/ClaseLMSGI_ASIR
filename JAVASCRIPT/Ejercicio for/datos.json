@@ -1,0 +1,22 @@
+{
+    "f_inicio": "",
+    "f_fin": "",
+    "localidades": [
+      {
+        "nombre": "Vera",
+        "temperaturas":  [
+            {
+                "dia": "L",
+                "max": "25",
+                "min": "12"
+            }
+
+        ]
+      },
+      {
+
+      }
+      
+    ]
+  }
+  
