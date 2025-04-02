@@ -13,10 +13,11 @@ function setSelectLocalidades(localidades){
         data.innerHTML = data.innerHTML + `<option value="${localidades[i]["nombre"]}">${localidades[i]["nombre"]}</option>`
     }
 }
-
+let temperaturas = [];
 fetch("datos.json")
   .then(response => response.json())
   .then(datos => {console.log(datos);
+    temperaturas = datos;
     setSelectLocalidades(datos.localidades);
     })
   .catch(error => console.error("El fichero no existe"))
@@ -42,12 +43,14 @@ localidades.forEach((localidad, index) => {
  */
 
 
-function calcularMedia(arrayT) {
+function calcularMaximaLocalidad(arrayT) {
     let suma = 0;
-    arrayT.forEach(num => {
-        suma += num;
+    arrayT.forEach(dato => {
+        suma += parseInt(dato.max);
     });
-    return arrayT.length ? (suma / arrayT.length).toFixed(2) : "0.00";
+    console.log(suma);
+
+    return (suma / arrayT.length).toFixed(2);
 }
 function calcularMediaDia(dia) {
     let suma = 0;
@@ -78,12 +81,16 @@ function avglocalidad(){
    //const nombre = document.getElementById("localidad").value;
    //const indice= getIndexOfLocalidad(nombre);
     const indice = document.getElementById("localidad").selectedIndex-1;
-
+if(!temperaturas){
+    console.log("No hay datos de temperaturas");
+}else{
    if (indice>=0){
-    document.getElementById("res_avglocalidad").innerHTML=calcularMedia(temperaturas[indice]);
+    console.log(temperaturas["localidades"][indice]);
+    document.getElementById("res_avglocalidad").innerHTML= calcularMaximaLocalidad(temperaturas["localidades"][indice]["temperaturas"]);
    }else{
     document.getElementById("res_avglocalidad").innerHTML="No has seleccionado ninguna localidad";
    }
+}
 }
 
 
