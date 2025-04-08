@@ -1,111 +1,111 @@
+let temperaturas = [];
 
-/*const temperaturas = [
-    [23,25,22,16,24,22,27],
-    [33,35,32,36,34,32,37],
-    [13,15,12,26,14,12,17],
-    [25,25,25,25,25,25,25]]; 
-
-const localidades = ["Vera","Huércal-Overa","Albox","Mojácar"];
-*/
-function setSelectLocalidades(localidades){
-    const data = document.getElementById("localidad");
-    for(let i=0; i<localidades.length;i++){
-        data.innerHTML = data.innerHTML + `<option value="${localidades[i]["nombre"]}">${localidades[i]["nombre"]}</option>`
+async function cargarDatos() {
+    try {
+        const response = await fetch("datos.json");
+        if (!response.ok) {
+            throw new Error(`Error al cargar el archivo: ${response.status}`);
+        }
+        const datos = await response.json();
+        temperaturas = datos.localidades;
+        setSelectLocalidades(temperaturas);
+        console.log("Datos cargados correctamente:", temperaturas);
+    } catch (error) {
+        console.error("Error al cargar los datos:", error.message);
+    } finally {
+        console.log("Carga de datos finalizada.");
     }
 }
-let temperaturas = [];
-fetch("datos.json")
-  .then(response => response.json())
-  .then(datos => {console.log(datos);
-    temperaturas = datos;
-    setSelectLocalidades(datos.localidades);
-    })
-  .catch(error => console.error("El fichero no existe"))
-  .finally(() => console.log("Terminado."))
-  .catch(error => console.error(datos));
 
-  
-
-
-/* Otra manera de rellenar el select de localidades 
-localidades.forEach((localidad, index) => {
-    const option = document.createElement("option");
-    option.value = index; // Guardamos el índice para referencia
-    option.textContent = localidad;
-    data.appendChild(option);
-});
-*/
-
-/**
- * 
- * @param {*} arrayT 
- * @returns 
- */
-
+function setSelectLocalidades(localidades) {
+    const select = document.getElementById("localidad");
+    localidades.forEach(localidad => {
+        const option = document.createElement("option");
+        option.value = localidad.nombre;
+        option.textContent = localidad.nombre;
+        select.appendChild(option);
+    });
+}
 
 function calcularMaximaLocalidad(arrayT) {
-    let suma = 0;
-    arrayT.forEach(dato => {
-        suma += parseInt(dato.max);
-    });
-    console.log(suma);
-
+    if (!arrayT || !arrayT.length) return "0.00";
+    const suma = arrayT.reduce((acc, dia) => acc + parseInt(dia.max), 0);
     return (suma / arrayT.length).toFixed(2);
 }
-function calcularMediaDia(dia) {
+
+function calcularMediaDia(diaLetra) {
+    if (!temperaturas || temperaturas.length === 0) return "0.00";
     let suma = 0;
+    let total = 0;
+
     temperaturas.forEach(localidad => {
-        suma += localidad[dia];
+        const dia = localidad.temperaturas.find(t => t.dia === diaLetra);
+        if (dia) {
+            suma += parseInt(dia.max);
+            total++;
+        }
     });
-    return temperaturas.length ? (suma / temperaturas.length).toFixed(2) : "0.00";
+
+    return total > 0 ? (suma / total).toFixed(2) : "0.00";
 }
 
-/**
- * Esta función no la vamos a usar, vamos a reutilizar código.
- * @returns 
- */
 function calcularMediaGlobal() {
     let suma = 0;
+    let total = 0;
+
     temperaturas.forEach(localidad => {
-        localidad.forEach(num => {
-            suma += num;
-        }
-
-        );
+        localidad.temperaturas.forEach(dia => {
+            suma += parseInt(dia.max);
+            total++;
+        });
     });
-    return temperaturas.length ? (suma / temperaturas.length).toFixed(2) : "0.00";
+
+    return total > 0 ? (suma / total).toFixed(2) : "0.00";
 }
 
-function avglocalidad(){
-  
-   //const nombre = document.getElementById("localidad").value;
-   //const indice= getIndexOfLocalidad(nombre);
-    const indice = document.getElementById("localidad").selectedIndex-1;
-if(!temperaturas){
-    console.log("No hay datos de temperaturas");
-}else{
-   if (indice>=0){
-    console.log(temperaturas["localidades"][indice]);
-    document.getElementById("res_avglocalidad").innerHTML= calcularMaximaLocalidad(temperaturas["localidades"][indice]["temperaturas"]);
-   }else{
-    document.getElementById("res_avglocalidad").innerHTML="No has seleccionado ninguna localidad";
-   }
-}
+function avglocalidad() {
+    const select = document.getElementById("localidad");
+    const indice = select.selectedIndex - 1;
+
+    const resultado = document.getElementById("res_avglocalidad");
+
+    if (!temperaturas || temperaturas.length === 0) {
+        resultado.textContent = "Datos no disponibles";
+        return;
+    }
+
+    if (indice >= 0) {
+        const localidad = temperaturas[indice];
+        const media = calcularMaximaLocalidad(localidad.temperaturas);
+        resultado.textContent = `Media: ${media}°C`;
+    } else {
+        resultado.textContent = "No has seleccionado ninguna localidad";
+    }
 }
 
+document.getElementById("avgdia").addEventListener("click", function () {
+    const diaSelect = document.getElementById("dia");
+    const diaLetra = diaSelect.value;
+    const resultado = document.getElementById("res_avgdia");
 
-document.getElementById("avgdia").addEventListener("click", function() {
-    const diaIndex = document.getElementById("dia").selectedIndex - 1;
-    if (diaIndex < 0) return;
-    
-    const avgTemp = calcularMediaDia(diaIndex);
-    
-    document.getElementById("res_avgdia").textContent = `Media: ${avgTemp}°C`;
+    if (!diaLetra) {
+        resultado.textContent = "Selecciona un día válido";
+        return;
+    }
+
+    const media = calcularMediaDia(diaLetra);
+    resultado.textContent = `Media: ${media}°C`;
 });
 
-document.getElementById("avg").addEventListener("click", function() {
-    const allTemps = temperaturas.flat();
-    document.getElementById("res_avg").textContent = `Media global: ${calcularMedia(allTemps)}°C`;
+document.getElementById("avg").addEventListener("click", function () {
+    const resultado = document.getElementById("res_avg");
+    if (!temperaturas || temperaturas.length === 0) {
+        resultado.textContent = "Datos no disponibles";
+        return;
+    }
+    const media = calcularMediaGlobal();
+    resultado.textContent = `Media global: ${media}°C`;
 });
 
-
+// Cargar datos al iniciar la página
+cargarDatos();
