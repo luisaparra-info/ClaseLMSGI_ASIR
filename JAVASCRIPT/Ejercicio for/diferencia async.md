@@ -1,6 +1,4 @@
-Buena pregunta, porque entender la diferencia entre usar `async/await` y `then/catch` es clave para escribir código limpio y fácil de mantener en JavaScript. Te explico con comparaciones claras:
 
----
 
 ### 🔁 1. **Sintaxis y legibilidad**
 
@@ -110,6 +108,3 @@ Aunque no es lo más elegante. Lo mejor es elegir un estilo y mantenerlo coheren
 | Manejo errores | ✅ Con `try/catch` estructurado       | ✅ Con `.catch()` final           |
 | Recomendado    | ✅ Código moderno y complejo          | 🔸 Operaciones simples o rápidas  |
 
----
-
-Si quieres, puedo ayudarte a pasar tu código a `async/await` completo y limpio. ¿Te gustaría eso?
