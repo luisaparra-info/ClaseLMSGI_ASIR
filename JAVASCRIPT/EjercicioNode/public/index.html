@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperaturas</title>
+</head>
+
+<body>
+    <header><h1>Medias de Temperatura</h1></header>
+    <main>
+        <section class="avg">
+            <h2>Temperaturas Máximas</h2>
+            <select id="localidad">
+                <!--Etiqueta option-->
+                <option disabled selected hidden value="">Selecciona una localidad</option>
+            </select>
+            <button id="avglocalidad" value="avglocalidad">Calcular media Tª max en esa localidad</button>
+            <span id="res_avglocalidad"></span>
+        </section>
+        <section class="avg">
+            <select id="dia">
+                <!--Etiqueta option-->
+                <option disabled selected hidden value="">Selecciona un día </option>
+                <option value="0">Lunes</option>
+                <option value="1">Martes</option>
+                <option value="2">Miércoles</option>
+                <option value="3">Jueves</option>
+                <option value="4">Viernes</option>
+                <option value="5">Sábado</option>
+                <option value="6">Domingo</option>
+            </select>
+            <button id="avgdia" value="avgdia">Calcular media Tª max en ese día</button>
+            <span id="res_avgdia"></span>
+        </section>
+        <section class="avg">
+            <button id="avg" value="avg">Calcular media Tª max</button>
+            <span id="res_avg"></span>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
